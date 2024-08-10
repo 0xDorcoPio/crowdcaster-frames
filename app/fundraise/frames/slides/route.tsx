@@ -13,11 +13,14 @@ const frameHandler = frames(async (ctx) => {
       return maximum
     return num
   }
-  const counter = ctx.message
-    ? ctx.searchParams.op === "+"
-      ? (ctx.state.slideNumber + 1) % slides.length
-      : fixNegative(ctx.state.slideNumber - 1, slides.length-1)
-    : ctx.state.slideNumber;
+  let counter =  0; // TODO: should be ctx.state.slideNumber
+  if(ctx.message){
+    if(ctx.searchParams.op === "+"){
+      counter = (ctx.state.slideNumber + 1) % slides.length
+    } else if(ctx.searchParams.op === "-") {
+      counter = fixNegative(ctx.state.slideNumber - 1, slides.length-1)
+    }
+  }
   
   return {
     image: (

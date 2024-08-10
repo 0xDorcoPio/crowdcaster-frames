@@ -11,7 +11,7 @@ const handler = frames(async () => {
         Browse slides
       </Button>,
       // Without query params
-      <Button action="post" target="/approve">
+      <Button action="post" target="/fund-me">
         Fund me
       </Button>,
     ],

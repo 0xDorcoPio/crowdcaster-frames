@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
-import { appURL } from "../../../utils";
 
 const frameHandler = frames(async (ctx) => {
   const slides = [
@@ -49,48 +48,3 @@ const frameHandler = frames(async (ctx) => {
 
 export const GET = frameHandler;
 export const POST = frameHandler;
-
-/*
-
-import { frames } from "./frames";
-import { Button } from "frames.js/next";
-
-const handler = frames(async (ctx) => {
-    const slides = [
-        "Slide 1",
-        "Slide 2"
-    ]
-
-    const counter = ctx.message
-    ? ctx.searchParams.op === "+"
-      ? (ctx.state.slideNumber + 1) % slides.length
-      : ctx.state.slideNumber - 1
-    : ctx.state.slideNumber;
-
-  return {
-    image: (
-    <div tw="flex">{slides[counter]} <br/> 
-        <i>{`Slide ${ctx.state.slideNumber+1} of ${slides.length}`}</i>
-    </div>
-    ),
-    buttons: [
-      // Without query params
-      <Button action="post" target={{ pathname: "/", query: { op: "-" } }}>
-        Previous slide
-      </Button>,
-      // Without query params
-      <Button action="post" target={{ pathname: "/", query: { op: "+" } }}>
-        Next slide
-      </Button>,
-      // Without query params
-      <Button action="post" target="/">
-        Go back
-      </Button>,
-    ],
-    state: { counter: counter },
-  };
-});
-
-export const GET = handler;
-export const POST = handler;
-*/

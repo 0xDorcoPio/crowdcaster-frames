@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
+import { appURL } from "../../../utils";
 
 const frameHandler = frames(async (ctx) => {
   const slides = [
@@ -35,9 +36,9 @@ const frameHandler = frames(async (ctx) => {
       <Button action="post" target={{ pathname: "/", query: { op: "+" } }}>
         Next slide
       </Button>,
-      <Button action="post" target="/">
-        Go back
-      </Button>,
+      <Button action="post" target="../">
+      Go back
+    </Button>,
     ],
     state: { slideNumber: counter },
   };

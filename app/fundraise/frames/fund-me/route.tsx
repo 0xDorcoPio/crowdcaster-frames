@@ -10,10 +10,16 @@ const frameHandler = frames(async (ctx) => {
     buttons: [
         <Button
         action="tx"
-        target={{ pathname: "/txdata", query: { amount: ctx.message?.inputText } }} post_url={{ pathname: "../thank-you" }}
+        target={{ pathname: "/txdata", query: { method: "approve" } }} post_url={{ pathname: "../thank-you" }}
       >
         Approve
       </Button>,
+      <Button
+        action="tx"
+        target={{ pathname: "/txdata", query: { method: "refund" } }} post_url={{ pathname: "../" }}
+        >
+        Ask for a refund
+        </Button>,
       <Button action="post" target="../">
         Go back
       </Button>,

@@ -5,15 +5,14 @@ import {
   Abi,
   encodeFunctionData,
 } from "viem";
+import {
+  CrowdCasterAddress,
+  CHAINID
+} from "../const"
 
 export const POST = frames(async (ctx) => {
   // Do something with the request data to generate transaction data
-  const CrowdCasterAddress = "0x3AaB08bA0E7696E6d71451f253e5B26412A061f8";
-  // OP Sepolia: 0x506D428E0414478dadC772891028282831085331
-  // Arbitrum Sepolia: "0x3AaB08bA0E7696E6d71451f253e5B26412A061f8";
-  const CHAINID = "eip155:421614"; 
-  // Arbitrium Sepolia: eip155:421614
-  // OP Sepolia: eip155:11155420
+  
 
   if(ctx.searchParams.method == "refund"){
     // Handle refund

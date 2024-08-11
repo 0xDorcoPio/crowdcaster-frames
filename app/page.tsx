@@ -5,6 +5,7 @@ import { createExampleURL } from "./utils";
 import { Frame } from "./components/Frame";
 
 export async function generateMetadata(): Promise<Metadata> {
+  console.log("--- metadata", await fetchMetadata(createExampleURL("/frames")))
   return {
     title: "frames.js starter",
     description: "This is a frames.js starter template",
